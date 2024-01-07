@@ -6,7 +6,7 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 05:07:59 by ebelfkih          #+#    #+#             */
-/*   Updated: 2024/01/06 06:40:51 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2024/01/07 12:57:04 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Contact::Contact()
 {
-
+    this->index = 0;
 }
 
 Contact::~Contact()
@@ -41,13 +41,13 @@ void    Contact::set_data(int index)
     
     std::cout << "enter the phonenumber : " <<std::endl;
     std::getline(std::cin, tmp);
-    this->phone_number = 10;
-    // this->phone_number = std::atoi(tmp);
+    // this->phone_number = 10;
+    this->phone_number = std::atoi(tmp.c_str());
 }
 
 void    Contact::get_all_data()
 {
-    std::cout<<"| "<< this->index << "       |";
+    std::cout << "|" << std::setw(10) << this->index << "|";
     if (this->last_name.size() > 10)
         std::cout << last_name.substr(0, 9) << ".|";
     else
@@ -64,6 +64,7 @@ void    Contact::get_all_data()
         std::cout << this->first_name;
         for (int i = 10 - this->first_name.size(); i >= 0; i--)
             std::cout << ' ';
+        std::cout << '|';
     }
     
     if (this->last_name.size() > 10)
@@ -73,6 +74,7 @@ void    Contact::get_all_data()
         std::cout << this->last_name;
         for (int i = 10 - this->last_name.size(); i >= 0; i--)
             std::cout << ' ';
+        std::cout << '|';
     }
     
     if (this->nickname.size() > 10)
@@ -82,6 +84,7 @@ void    Contact::get_all_data()
         std::cout << this->nickname;
         for (int i = 10 - this->nickname.size(); i >= 0; i--)
             std::cout << ' ';
+        std::cout << '|';
     }
     std::cout << std::endl;
 }

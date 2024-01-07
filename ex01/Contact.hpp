@@ -6,7 +6,7 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 05:07:54 by ebelfkih          #+#    #+#             */
-/*   Updated: 2024/01/06 06:40:31 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2024/01/07 11:28:35 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 #include <iostream>
 #include <string>
+#include <sstream>
+#include <iomanip>
 
 class Contact
 {

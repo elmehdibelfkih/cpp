@@ -6,28 +6,29 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 05:08:11 by ebelfkih          #+#    #+#             */
-/*   Updated: 2024/01/06 06:47:01 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2024/01/07 11:51:57 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHONEBOOK_HPP
 #define PHONEBOOK_HPP
 
-#include <iostream>
 #include "Contact.hpp"
+#include <iostream>
 #include <sstream>
+#include <string>
+#include <iomanip>
 
 class PhoneBook
 {
 private:
     Contact contact[8];
-    static int count;
 public:
+    static int count;
     PhoneBook();
     ~PhoneBook();
     void    set_contact();
     void    search();
-    // void    search(std::string first_name);
 };
 
 #endif

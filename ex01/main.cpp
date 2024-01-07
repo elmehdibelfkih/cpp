@@ -6,31 +6,35 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 04:11:01 by ebelfkih          #+#    #+#             */
-/*   Updated: 2024/01/06 06:44:58 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2024/01/07 11:52:48 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Contact.hpp"
 #include "PhoneBook.hpp"
+#include "Contact.hpp"
 
 int main(void)
 {
     PhoneBook   phone_book;
-    std::string tmp;
     std::string cmd;
 
-    while (true)
+
+    while (cmd != "EXIT" && !std::cin.eof())
     {
-        
-        std::cin >> cmd;
-        if (cmd.compare("ADD"))
+        std::cout << "Enter a command > ";
+        std::getline(std::cin, cmd);
+        if (cmd == "ADD")
             phone_book.set_contact();
-        else if (cmd.compare("EXIT"))
-            exit(EXIT_SUCCESS);
-        else if (cmd.compare("SEARCH"))
+        else if ("SEARCH" == cmd)
+        {
+            std::cout << "Hello search 1 " << std::endl;
             phone_book.search();
-        else
-            std::cout << "please enter ADD, SEARCH or EXIT !!" << std::endl;
+            std::cout << "Hello search 2 " << std::endl;
+        }
+        // else
+        // {
+        //     std::cout << "please enter ADD, SEARCH or EXIT !!" << std::endl;   
+        // }
     }
     return (0);
 }
