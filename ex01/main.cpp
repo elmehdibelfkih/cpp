@@ -6,7 +6,7 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 04:11:01 by ebelfkih          #+#    #+#             */
-/*   Updated: 2024/01/07 11:52:48 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2024/01/08 14:16:25 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,15 +26,9 @@ int main(void)
         if (cmd == "ADD")
             phone_book.set_contact();
         else if ("SEARCH" == cmd)
-        {
-            std::cout << "Hello search 1 " << std::endl;
             phone_book.search();
-            std::cout << "Hello search 2 " << std::endl;
-        }
-        // else
-        // {
-        //     std::cout << "please enter ADD, SEARCH or EXIT !!" << std::endl;   
-        // }
+        else if (!std::cin.eof())
+            std::cout << "please enter ADD, SEARCH or EXIT !!" << std::endl;
     }
     return (0);
 }

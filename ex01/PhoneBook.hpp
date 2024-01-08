@@ -6,7 +6,7 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 05:08:11 by ebelfkih          #+#    #+#             */
-/*   Updated: 2024/01/07 11:51:57 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2024/01/08 10:20:54 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ class PhoneBook
 {
 private:
     Contact contact[8];
-public:
     static int count;
+public:
     PhoneBook();
     ~PhoneBook();
     void    set_contact();

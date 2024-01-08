@@ -6,12 +6,12 @@
 #    By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/04 11:42:08 by ebelfkih          #+#    #+#              #
-#    Updated: 2024/01/07 11:53:04 by ebelfkih         ###   ########.fr        #
+#    Updated: 2024/01/08 13:21:59 by ebelfkih         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = phonebook
-GPP = g++ -std=c++98 -Wall -Wextra -Werror -fsanitize=address
+GPP = g++ -std=c++98 -Wall -Wextra -Werror #-fsanitize=address
 SRC =	main.cpp		\
 		PhoneBook.cpp	\
 		Contact.cpp		\

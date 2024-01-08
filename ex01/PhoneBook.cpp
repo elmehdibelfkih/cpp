@@ -6,7 +6,7 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 11:41:48 by ebelfkih          #+#    #+#             */
-/*   Updated: 2024/01/07 11:46:20 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2024/01/08 14:41:46 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@ int PhoneBook::count = 0;
 
 PhoneBook::PhoneBook()
 {
-    // this.//ma3raft mal din mo
-    // this->contact
+
 }
 
 PhoneBook::~PhoneBook()
@@ -27,7 +26,7 @@ PhoneBook::~PhoneBook()
 
 void    PhoneBook::set_contact()
 {
-    if (this->count >= 7)
+    if (this->count >= 8)
         this->count = 0;
     this->contact[this->count].set_data(this->count);    
     this->count++;
@@ -35,27 +34,34 @@ void    PhoneBook::set_contact()
 
 void    PhoneBook::search()
 {
+    bool Valid = false;
     std::string tmp;
-    int index;
-    
-    std::cout << "Hello search" << std::endl;
+    int index = -1;
 
-    
-    std::cout << "|^^^^^^^^^^|^^^^^^^^^^|^^^^^^^^^^|^^^^^^^^^^|"<< std::endl;
-    std::cout << "|   index  |   first  |   last   |  number  |"<< std::endl;
-    std::cout << "|          |   name   |   name   |          |"<< std::endl;
-    std::cout << "|^^^^^^^^^^|^^^^^^^^^^|^^^^^^^^^^|^^^^^^^^^^|"<< std::endl;
+    std::cout << "|^^^^^^^^^^|^^^^^^^^^^|^^^^^^^^^^|^^^^^^^^^^|^^^^^^^^^^|^^^^^^^^^^|"<< std::endl;
+    std::cout << "|   index  |   first  |   last   |   nick   |  number  |  darkest |"<< std::endl;
+    std::cout << "|          |   name   |   name   |   name   |          |  secret  |"<< std::endl;
+    std::cout << "|^^^^^^^^^^|^^^^^^^^^^|^^^^^^^^^^|^^^^^^^^^^|^^^^^^^^^^|^^^^^^^^^^|"<< std::endl;
     for(int i = 0; i < 8; i++)
         this->contact[i].get_all_data();
-    std::cout << "|__________|__________|__________|__________|"<< std::endl;
-    std::cout << std::endl << "enter the index : ";
-    std::cin >> tmp;
-    std::istringstream iss(tmp);
-    while (tmp.size() != 1 && iss >> index)
+    std::cout << "|__________|__________|__________|__________|__________|__________|"<< std::endl;
+    while (!Valid && !std::cin.eof())
     {
         std::cout << std::endl << "enter the index : ";
-        std::cin >> tmp;
-        std::istringstream iss(tmp);
+        std::getline(std::cin, tmp);
+        if (tmp.size() != 1 || !isdigit(tmp[0]))
+        {
+            std::cout << "invalid index, try again" << std::endl;
+            continue;
+        }
+        index = tmp[0] - '0';
+        if (index > 7)
+        {
+            std::cout << "invalid index, try again" << std::endl;
+            continue;
+        }
+        Valid = true;
     }
-    this->contact[index].get_contact(index);
+    if (index != -1)
+        this->contact[index].get_contact(index);
 }

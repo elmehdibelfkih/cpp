@@ -6,7 +6,7 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 05:07:54 by ebelfkih          #+#    #+#             */
-/*   Updated: 2024/01/07 11:28:35 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2024/01/08 12:52:44 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,16 @@ private:
     std::string first_name;
     std::string last_name;
     std::string nickname;
-    int phone_number;
+    std::string phone_number;
+    std::string darkest_secret;
 public:
     Contact();
     ~Contact();
-    void    set_data(int index);
-    void    get_all_data();
-    void    get_contact(int index);
+    void            set_data(int index);
+    void            get_all_data();
+    void            get_contact(int index);
+    std::string     pars_string(std::string data);
+    std::string     pars_phone(std::string data);
 };
 
 #endif
