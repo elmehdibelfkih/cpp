@@ -6,7 +6,7 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 11:41:48 by ebelfkih          #+#    #+#             */
-/*   Updated: 2024/01/08 14:41:46 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2024/01/09 03:34:28 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,13 +49,13 @@ void    PhoneBook::search()
     {
         std::cout << std::endl << "enter the index : ";
         std::getline(std::cin, tmp);
-        if (tmp.size() != 1 || !isdigit(tmp[0]))
+        if ((tmp.size() != 1 || !isdigit(tmp[0])) && !std::cin.eof())
         {
             std::cout << "invalid index, try again" << std::endl;
             continue;
         }
         index = tmp[0] - '0';
-        if (index > 7)
+        if (index > 7 && !std::cin.eof())
         {
             std::cout << "invalid index, try again" << std::endl;
             continue;
