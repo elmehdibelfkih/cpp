@@ -6,7 +6,7 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 06:53:50 by ebelfkih          #+#    #+#             */
-/*   Updated: 2024/01/09 11:19:50 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2024/01/09 15:44:58 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,6 @@ int main()
     Zombie *Zombie_1;
 
     Zombie_1 = newZombie("hassan");
+    randomChump("simo");
     delete (Zombie_1);
-
 }

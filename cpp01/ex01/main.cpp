@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/09 06:56:02 by ebelfkih          #+#    #+#             */
-/*   Updated: 2024/01/09 15:53:03 by ebelfkih         ###   ########.fr       */
+/*   Created: 2024/01/09 15:48:31 by ebelfkih          #+#    #+#             */
+/*   Updated: 2024/01/09 17:28:51 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-#include <iostream>
+#include "Zombie.hpp"
 
-class Zombie
+Zombie* zombieHorde( int N, std::string name );
+
+int main(void)
 {
-public:
-    Zombie(std::string name);
-    ~Zombie();
-    void announce( void );
-private:
-    std::string name;
-};
+    Zombie *horde;
+
+    horde = zombieHorde( 10, "hasan");
+    for (int i = 0; i < 10; i++)
+        horde->announce();
+    delete[] horde;
+    
+}

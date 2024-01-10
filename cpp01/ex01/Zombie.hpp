@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/09 06:56:02 by ebelfkih          #+#    #+#             */
-/*   Updated: 2024/01/09 15:53:03 by ebelfkih         ###   ########.fr       */
+/*   Created: 2024/01/09 15:48:49 by ebelfkih          #+#    #+#             */
+/*   Updated: 2024/01/09 17:23:24 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,9 @@
 class Zombie
 {
 public:
-    Zombie(std::string name);
+    Zombie();
     ~Zombie();
+    void get_name(std::string name);
     void announce( void );
 private:
     std::string name;
