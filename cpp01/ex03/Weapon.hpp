@@ -6,7 +6,16 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 18:03:30 by ebelfkih          #+#    #+#             */
-/*   Updated: 2024/01/09 18:03:31 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2024/01/10 09:13:16 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
+
+class Weapon
+{
+public:
+
+private:
+
+}
