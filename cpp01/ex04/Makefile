@@ -6,7 +6,7 @@
 #    By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/10 14:05:22 by ebelfkih          #+#    #+#              #
-#    Updated: 2024/01/10 14:25:15 by ebelfkih         ###   ########.fr        #
+#    Updated: 2024/01/12 13:38:49 by ebelfkih         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,10 +21,10 @@ OBJ = $(SRC:%.cpp=%.o)
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$() $(GPP) -o $(NAME) $(OBJ)
+	$(GPP) -o $(NAME) $(OBJ)
 
-%.o: %.cpp
-	$() $(GPP) -c $< -o $@
+%.o: %.cpp replace.hpp
+	$(GPP) -c $< -o $@
 
 clean:
 	rm -rf $(OBJ)
