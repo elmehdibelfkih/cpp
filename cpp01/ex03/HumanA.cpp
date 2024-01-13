@@ -6,17 +6,16 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 18:04:27 by ebelfkih          #+#    #+#             */
-/*   Updated: 2024/01/10 18:22:22 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2024/01/13 10:25:13 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanA.hpp"
 #include "Weapon.hpp"
 
-HumanA::HumanA(std::string name, Weapon my_weapon)
+HumanA::HumanA(std::string name, Weapon& w) : weapon(w)
 {
     this->name = name;
-    this->my_weapon = my_weapon;
 }
 
 HumanA::~HumanA()
@@ -24,12 +23,12 @@ HumanA::~HumanA()
     
 }
 
-void HumanA::setWeapon(Weapon my_weapon)
-{
-    this->my_weapon = my_weapon;
-}
+// void HumanA::setWeapon(Weapon &my_weapon)
+// {
+//     this->my_weapon = my_weapon;
+// }
 
 void HumanA::attack()
 {
-    std::cout << this->name << "attacks with their "<< this->my_weapon.getType() << std::endl;
+    std::cout << this->name << "attacks with their " << this->weapon.getType() << std::endl;
 }
