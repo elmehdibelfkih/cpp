@@ -6,7 +6,7 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 11:22:50 by ebelfkih          #+#    #+#             */
-/*   Updated: 2024/01/08 13:04:06 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2024/02/01 03:05:42 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,6 @@ int main(int ac, char **av)
     {
         std::string tmp = av[i];
         for (size_t j = 0; j < tmp.size(); j++)
-            std::cout<<(char)std::toupper(tmp[j]);
+            std::cout << (char)std::toupper(tmp[j]);
     }
 }

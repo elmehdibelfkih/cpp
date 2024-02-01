@@ -6,7 +6,7 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 05:07:59 by ebelfkih          #+#    #+#             */
-/*   Updated: 2024/01/08 14:37:04 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2024/02/01 03:24:46 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,27 +89,27 @@ void    Contact::get_all_data()
     if (this->first_name.size() > 10)
         std::cout << first_name.substr(0, 9) << ".|";
     else
-        std::cout << this->first_name << std::setw(11 - this->first_name.size()) << '|';
+        std::cout  << std::setw(10) << this->first_name << '|';
 
     if (this->last_name.size() > 10)
         std::cout << last_name.substr(0, 9) << ".|";
     else
-        std::cout << this->last_name << std::setw(11 - this->last_name.size()) << '|';
+        std::cout << std::setw(10) << this->last_name << '|';
 
     if (this->nickname.size() > 10)
         std::cout << nickname.substr(0, 9) << ".|";
     else
-        std::cout << this->nickname << std::setw(11 - this->nickname.size()) << '|';
+        std::cout << std::setw(10)<< this->nickname << '|';
 
     if (this->phone_number.size() > 10)
         std::cout << phone_number.substr(0, 9) << ".|";
     else
-        std::cout << this->phone_number << std::setw(11 - this->phone_number.size()) << '|';
+        std::cout << std::setw(10) << this->phone_number  << '|';
 
     if (this->darkest_secret.size() > 10)
         std::cout << darkest_secret.substr(0, 9) << ".|";
     else
-        std::cout << this->darkest_secret << std::setw(11 - this->darkest_secret.size()) << '|';
+        std::cout << std::setw(10) << this->darkest_secret  << '|';
     std::cout << std::endl;
 }
 
