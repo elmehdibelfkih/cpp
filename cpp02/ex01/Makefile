@@ -5,11 +5,10 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/01/27 03:26:15 by ebelfkih          #+#    #+#              #
-#    Updated: 2024/02/07 11:13:48 by ebelfkih         ###   ########.fr        #
+#    Created: 2024/02/07 11:38:18 by ebelfkih          #+#    #+#              #
+#    Updated: 2024/02/07 11:39:00 by ebelfkih         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
 
 NAME = Fixed
 GPP = c++ -std=c++98 -Wall -Wextra -Werror #-fsanitize=address
@@ -33,4 +32,3 @@ fclean: clean
 	rm -rf $(NAME)
 
 re: fclean all
-
