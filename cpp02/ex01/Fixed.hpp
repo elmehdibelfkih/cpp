@@ -6,7 +6,7 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 11:38:46 by ebelfkih          #+#    #+#             */
-/*   Updated: 2024/02/07 11:48:33 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2024/02/08 20:26:44 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,3 +33,5 @@ public:
     int getRawBits( void ) const;
     void setRawBits( int const raw );
 };
+
+std::ostream& operator<<(std::ostream& os, const Fixed& obj);

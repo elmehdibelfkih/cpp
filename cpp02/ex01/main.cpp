@@ -6,13 +6,14 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 11:38:03 by ebelfkih          #+#    #+#             */
-/*   Updated: 2024/02/07 11:44:57 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2024/02/08 20:27:40 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-int main( void ) {
+int main( void ) 
+{
 Fixed a;
 Fixed const b( 10 );
 Fixed const c( 42.42f );

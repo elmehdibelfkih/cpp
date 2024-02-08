@@ -6,7 +6,7 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 03:26:36 by ebelfkih          #+#    #+#             */
-/*   Updated: 2024/02/07 11:43:01 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2024/02/08 20:42:16 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void Fixed::setRawBits( int const raw )
 
 Fixed::Fixed(const Fixed& obj)
 {
-    std::cout<< "Default constructor called" << std::endl;
+    std::cout<< "copy constructor called" << std::endl;
     this->fixedPoint = obj.fixedPoint;
 }
 
