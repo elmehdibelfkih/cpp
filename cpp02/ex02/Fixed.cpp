@@ -6,7 +6,7 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 11:38:35 by ebelfkih          #+#    #+#             */
-/*   Updated: 2024/02/09 13:03:35 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2024/02/09 13:52:08 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,34 +118,34 @@ bool Fixed::operator!=(const Fixed& obj)
 
 Fixed& Fixed::operator+(const Fixed& obj)
 {
-    Fixed ret;
+    Fixed *ret = new Fixed;
 
-    ret.fixedPoint = this->fixedPoint + obj.fixedPoint;
-    return ret;
+    (*ret).fixedPoint = this->fixedPoint + obj.fixedPoint;
+    return *ret;
 }
 
 Fixed& Fixed::operator-(const Fixed& obj)
 {
-    Fixed ret;
+    Fixed *ret = new Fixed;
 
-    ret.fixedPoint = this->fixedPoint - obj.fixedPoint;
-    return ret;
+    (*ret).fixedPoint  = this->fixedPoint - obj.fixedPoint;
+    return *ret;
 }
 
 Fixed& Fixed::operator*(const Fixed& obj)
 {
-    Fixed ret;
+    Fixed *ret = new Fixed;
 
-    ret.fixedPoint = this->fixedPoint * obj.fixedPoint;
-    return ret;
+    (*ret).fixedPoint  = this->fixedPoint * obj.fixedPoint;
+    return *ret;
 }
 
 Fixed& Fixed::operator/(const Fixed& obj)
 {
-    Fixed ret;
+    Fixed *ret = new Fixed;
 
-    ret.fixedPoint = this->fixedPoint / obj.fixedPoint;
-    return ret;
+    (*ret).fixedPoint = this->fixedPoint / obj.fixedPoint;
+    return *ret;
 }
 
 Fixed& Fixed::min(Fixed& obj1, Fixed &obj2)
