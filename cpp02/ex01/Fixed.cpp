@@ -6,7 +6,7 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 11:38:35 by ebelfkih          #+#    #+#             */
-/*   Updated: 2024/02/08 20:41:42 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2024/02/09 12:11:42 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,4 +78,3 @@ std::ostream& operator<<(std::ostream& os, const Fixed& obj)
     os << obj.toFloat();
     return os;
 }
-
