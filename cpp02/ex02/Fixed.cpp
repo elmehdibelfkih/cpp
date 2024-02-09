@@ -6,7 +6,7 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 11:38:35 by ebelfkih          #+#    #+#             */
-/*   Updated: 2024/02/09 13:52:08 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2024/02/09 16:09:00 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ Fixed::Fixed(const int val)
 
 Fixed::Fixed(const float val)
 {
-    this->fixedPoint = (int)((val * (1 << this->N_fractional_bits)));
+    this->fixedPoint = static_cast<int>((roundf(val * (1 << this->N_fractional_bits))));
 }
 
 Fixed::~Fixed()
@@ -36,12 +36,12 @@ Fixed::~Fixed()
 
 float Fixed::toFloat( void ) const
 {
-    return (float)(this->fixedPoint) / (1 << 8);
+    return (float)(this->fixedPoint) / (1 << this->N_fractional_bits);
 }
 
 int Fixed::toInt( void ) const
 {
-    return this->fixedPoint >> 8;
+    return this->fixedPoint >> this->N_fractional_bits;
 }
 
 int Fixed::getRawBits( void ) const
@@ -116,36 +116,24 @@ bool Fixed::operator!=(const Fixed& obj)
     return false;
 }
 
-Fixed& Fixed::operator+(const Fixed& obj)
+Fixed Fixed::operator+(const Fixed& obj)
 {
-    Fixed *ret = new Fixed;
-
-    (*ret).fixedPoint = this->fixedPoint + obj.fixedPoint;
-    return *ret;
+    return (Fixed(this->toFloat() + obj.toFloat()));
 }
 
-Fixed& Fixed::operator-(const Fixed& obj)
+Fixed Fixed::operator-(const Fixed& obj)
 {
-    Fixed *ret = new Fixed;
-
-    (*ret).fixedPoint  = this->fixedPoint - obj.fixedPoint;
-    return *ret;
+    return (Fixed(this->toFloat() - obj.toFloat()));
 }
 
-Fixed& Fixed::operator*(const Fixed& obj)
+Fixed Fixed::operator*(const Fixed& obj)
 {
-    Fixed *ret = new Fixed;
-
-    (*ret).fixedPoint  = this->fixedPoint * obj.fixedPoint;
-    return *ret;
+    return (Fixed(this->toFloat() * obj.toFloat()));
 }
 
-Fixed& Fixed::operator/(const Fixed& obj)
+Fixed Fixed::operator/(const Fixed& obj)
 {
-    Fixed *ret = new Fixed;
-
-    (*ret).fixedPoint = this->fixedPoint / obj.fixedPoint;
-    return *ret;
+    return (Fixed(this->toFloat() / obj.toFloat()));
 }
 
 Fixed& Fixed::min(Fixed& obj1, Fixed &obj2)
@@ -162,19 +150,19 @@ Fixed& Fixed::max(Fixed& obj1, Fixed &obj2)
     return obj1;
 }
 
-// Fixed& Fixed::min(const Fixed& obj1, const Fixed &obj2)
-// {
-//     if (obj1.fixedPoint > obj2.fixedPoint)
-//         return obj2;
-//     return obj1;  
-// }
+Fixed& Fixed::min(const Fixed& obj1, const Fixed &obj2)
+{
+    if (obj1.fixedPoint > obj2.fixedPoint)
+        return (Fixed&)(obj2);
+    return (Fixed&)obj1;
+}
 
-// Fixed& Fixed::max(const Fixed& obj1, const Fixed &obj2)
-// {
-//     if (obj1.fixedPoint < obj2.fixedPoint)
-//         return obj2;
-//     return obj1 
-// }
+Fixed& Fixed::max(const Fixed& obj1, const Fixed &obj2)
+{
+    if (obj1.fixedPoint < obj2.fixedPoint)
+        return (Fixed& )obj2;
+    return (Fixed&)obj1;
+}
 
 Fixed& Fixed::operator++()
 {

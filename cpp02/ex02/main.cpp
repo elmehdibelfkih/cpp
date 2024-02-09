@@ -6,7 +6,7 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 11:38:03 by ebelfkih          #+#    #+#             */
-/*   Updated: 2024/02/09 13:46:16 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2024/02/09 15:36:02 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,6 @@ std::cout << a << std::endl;
 std::cout << a++ << std::endl;
 std::cout << a << std::endl;
 std::cout << b << std::endl;
-// std::cout << Fixed::max( a, b ) << std::endl;
+std::cout << Fixed::max( a, b ) << std::endl;
 return 0;
 }

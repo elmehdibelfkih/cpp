@@ -6,7 +6,7 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 11:38:35 by ebelfkih          #+#    #+#             */
-/*   Updated: 2024/02/09 12:11:42 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2024/02/09 16:09:39 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ Fixed::Fixed(const int val)
 Fixed::Fixed(const float val)
 {
     std::cout << "Default constructor called" << std::endl;
-    this->fixedPoint = (int)((val * (1 << this->N_fractional_bits)));
+    this->fixedPoint = static_cast<int>((roundf(val * (1 << this->N_fractional_bits))));
 }
 
 Fixed::~Fixed()
