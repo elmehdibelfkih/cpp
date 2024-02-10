@@ -6,13 +6,11 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 03:26:36 by ebelfkih          #+#    #+#             */
-/*   Updated: 2024/02/08 20:42:16 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2024/02/10 12:53:20 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-
-// Fixed::N_fractional_bits = 8;
 
 Fixed::Fixed()
 {

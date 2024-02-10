@@ -6,7 +6,7 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 11:38:46 by ebelfkih          #+#    #+#             */
-/*   Updated: 2024/02/08 20:26:44 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2024/02/10 12:41:51 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class Fixed
 {
 private:
     int fixedPoint;
-    static const int N_fractional_bits = 8;
+    static const int NFractionalBits = 8;
 
 public:
     Fixed();

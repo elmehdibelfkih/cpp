@@ -6,7 +6,7 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 11:38:46 by ebelfkih          #+#    #+#             */
-/*   Updated: 2024/02/09 16:03:08 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2024/02/10 12:45:43 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class Fixed
 {
 private:
     int fixedPoint;
-    static const int N_fractional_bits = 8;
+    static const int NFractionalBits = 8;
 
 public:
     Fixed();
@@ -44,10 +44,12 @@ public:
     Fixed operator/(const Fixed& obj);
     static Fixed& min(Fixed& obj1, Fixed &obj2);
     static Fixed& max(Fixed& obj1, Fixed &obj2);
-    static Fixed& min(const Fixed& obj1, const Fixed &obj2);  // to do
-    static Fixed& max(const Fixed& obj1, const Fixed &obj2); // to do
+    static Fixed& min(const Fixed& obj1, const Fixed &obj2);
+    static Fixed& max(const Fixed& obj1, const Fixed &obj2);
     Fixed operator++(int);
     Fixed& operator++();
+    Fixed operator--(int);
+    Fixed& operator--();
 };
 
 std::ostream& operator<<(std::ostream& os, const Fixed& obj);
