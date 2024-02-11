@@ -6,7 +6,7 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 17:52:06 by ebelfkih          #+#    #+#             */
-/*   Updated: 2024/02/11 01:21:24 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2024/02/11 01:03:34 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,5 +68,4 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& obj)
         this->name = obj.name;
         this->AttackDamage = obj.AttackDamage;
     }
-    return (*this);
 }

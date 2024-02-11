@@ -6,13 +6,13 @@
 #    By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/27 03:26:15 by ebelfkih          #+#    #+#              #
-#    Updated: 2024/02/07 11:13:48 by ebelfkih         ###   ########.fr        #
+#    Updated: 2024/02/10 21:28:49 by ebelfkih         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 NAME = Fixed
-GPP = c++ -std=c++98 -Wall -Wextra -Werror #-fsanitize=address
+GPP = c++ -std=c++98 -Wall -Wextra -Werror
 SRC = Fixed.cpp main.cpp
 
 OBJ = $(SRC:%.cpp=%.o)

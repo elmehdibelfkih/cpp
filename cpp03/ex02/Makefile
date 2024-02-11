@@ -5,14 +5,16 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/02/07 11:38:18 by ebelfkih          #+#    #+#              #
-#    Updated: 2024/02/10 21:44:53 by ebelfkih         ###   ########.fr        #
+#    Created: 2024/02/10 13:11:11 by ebelfkih          #+#    #+#              #
+#    Updated: 2024/02/11 01:26:32 by ebelfkih         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Fixed
-GPP = c++ -std=c++98 -Wall -Wextra -Werror #-fsanitize=address
-SRC = Fixed.cpp main.cpp
+NAME = FragTrap
+GPP = c++ -std=c++98 -Wall -Wextra -Werror
+SRC = ClapTrap.cpp ScavTrap.cpp main.cpp FragTrap.cpp
+HDRS = ClapTrap.hpp ScavTrap.hpp FragTrap.hpp
+
 
 OBJ = $(SRC:%.cpp=%.o)
 
@@ -22,7 +24,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(GPP) -o $(NAME) $(OBJ)
 
-%.o: %.cpp Fixed.hpp
+%.o: %.cpp $(HDRS)
 	$(GPP) -c $< -o $@
 
 clean:

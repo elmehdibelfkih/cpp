@@ -6,7 +6,7 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 13:12:54 by ebelfkih          #+#    #+#             */
-/*   Updated: 2024/02/10 17:28:49 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2024/02/11 01:05:03 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ private:
     int EnergyPoints; // 10
     int AttackDamage; // 0
 public:
+    ClapTrap();
     ClapTrap(std::string name);
     ClapTrap(const ClapTrap& obj);
     ~ClapTrap();

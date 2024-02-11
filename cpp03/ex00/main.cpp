@@ -6,7 +6,7 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 13:12:14 by ebelfkih          #+#    #+#             */
-/*   Updated: 2024/02/10 17:47:10 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2024/02/11 00:37:35 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,44 +14,11 @@
 
 int main(void)
 {
-    ClapTrap almojarib("mehdi");
-    ClapTrap almojarabo3alayh("ayman");
+    ClapTrap clap("mehdi");
+    ClapTrap clap2("ayman");
 
-    almojarib.attack("ayman");
-    almojarabo3alayh.takeDamage(2);
-    almojarib.attack("ayman");
-    almojarabo3alayh.takeDamage(5);
-    almojarabo3alayh.beRepaired(10);
-    almojarabo3alayh.beRepaired(10);
-    almojarabo3alayh.beRepaired(10);
-    almojarabo3alayh.beRepaired(10);
-    almojarabo3alayh.beRepaired(10);
-    almojarabo3alayh.beRepaired(10);
-    almojarabo3alayh.beRepaired(10);
-    almojarabo3alayh.beRepaired(10);
-    almojarabo3alayh.beRepaired(10);
-    almojarabo3alayh.beRepaired(10);
-    almojarabo3alayh.beRepaired(10);
+    clap.attack("ayman");
+    clap2.takeDamage(4);
 
-    almojarabo3alayh.beRepaired(10);
-    almojarabo3alayh.beRepaired(10);
-    almojarabo3alayh.beRepaired(10);
-    almojarabo3alayh.beRepaired(10);
-    almojarabo3alayh.beRepaired(10);
-    almojarabo3alayh.beRepaired(10);
-    almojarabo3alayh.beRepaired(10);
-    almojarabo3alayh.beRepaired(10);
-    almojarabo3alayh.beRepaired(10);
-    almojarabo3alayh.beRepaired(10);
-    almojarabo3alayh.beRepaired(10);
-    almojarabo3alayh.beRepaired(10);
-    almojarabo3alayh.beRepaired(10);
-    almojarabo3alayh.beRepaired(10);
-    almojarabo3alayh.beRepaired(10);
-    almojarabo3alayh.beRepaired(10);
-    almojarabo3alayh.beRepaired(10);
-    almojarabo3alayh.beRepaired(10);
-    almojarabo3alayh.beRepaired(10);
-    almojarabo3alayh.beRepaired(10);
-    almojarabo3alayh.beRepaired(10);
+    clap2.beRepaired(10);
 }
