@@ -6,13 +6,13 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 13:12:50 by ebelfkih          #+#    #+#             */
-/*   Updated: 2024/02/12 18:27:06 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2024/02/12 18:51:19 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap()
+ClapTrap::ClapTrap() // default constructor
 {
     std::cout << "ClapTrap default constructor called" << std::endl;
     this->name = "";
@@ -21,7 +21,7 @@ ClapTrap::ClapTrap()
     this->AttackDamage = 0;
 }
 
-ClapTrap::ClapTrap(std::string name)
+ClapTrap::ClapTrap(std::string name) // constructor 
 {
     std::cout << "ClapTrap constructor called" << std::endl;
     this->name = name;
@@ -30,7 +30,32 @@ ClapTrap::ClapTrap(std::string name)
     this->AttackDamage = 0;
 }
 
-ClapTrap::~ClapTrap()
+ClapTrap::ClapTrap(const ClapTrap& obj) // copy constructor
+{
+    std::cout << "ClapTrap copy constructor called" << std::endl;
+    if (this != &obj)
+    {
+        this->HitPoints = obj.HitPoints;
+        this->EnergyPoints = obj.EnergyPoints;
+        this->name = obj.name;
+        this->AttackDamage = obj.AttackDamage;     
+    }
+}
+
+ClapTrap& ClapTrap::operator=(const ClapTrap& obj) // copy assignment opperator 
+{
+    std::cout << "ClapTrap copy assignment opperator called" << std::endl;
+    if (this != &obj)
+    {
+        this->HitPoints = obj.HitPoints;
+        this->EnergyPoints = obj.EnergyPoints;
+        this->name = obj.name;
+        this->AttackDamage = obj.AttackDamage;
+    }
+    return *this;
+}
+
+ClapTrap::~ClapTrap() // destructor
 {
     std::cout << "ClapTrap Destructor called" << std::endl;
 }
@@ -71,28 +96,4 @@ void ClapTrap::beRepaired(unsigned int amount)
     {
         std::cout << this->name << " cannot be repaired" << std::endl;
     }
-}
-
-
-ClapTrap::ClapTrap(const ClapTrap& obj)
-{
-    if (this != &obj)
-    {
-        this->HitPoints = obj.HitPoints;
-        this->EnergyPoints = obj.EnergyPoints;
-        this->name = obj.name;
-        this->AttackDamage = obj.AttackDamage;     
-    }
-}
-
-ClapTrap& ClapTrap::operator=(const ClapTrap& obj)
-{
-    if (this != &obj)
-    {
-        this->HitPoints = obj.HitPoints;
-        this->EnergyPoints = obj.EnergyPoints;
-        this->name = obj.name;
-        this->AttackDamage = obj.AttackDamage;
-    }
-    return *this;
 }
