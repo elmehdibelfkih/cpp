@@ -6,7 +6,7 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 13:12:50 by ebelfkih          #+#    #+#             */
-/*   Updated: 2024/02/11 01:05:59 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2024/02/12 18:25:36 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ ClapTrap::ClapTrap()
 
 ClapTrap::ClapTrap(std::string name)
 {
-    std::cout << "constructor called" << std::endl;
+    std::cout << "ClapTrap constructor called" << std::endl;
     this->name = name;
     this->HitPoints = 10;
     this->EnergyPoints = 10;
@@ -32,7 +32,7 @@ ClapTrap::ClapTrap(std::string name)
 
 ClapTrap::~ClapTrap()
 {
-    std::cout << "Destructor called" << std::endl;
+    std::cout << "ClapTrap Destructor called" << std::endl;
 }
 
 void ClapTrap::attack(const std::string& target)
@@ -48,7 +48,7 @@ void ClapTrap::attack(const std::string& target)
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
-    if (this->HitPoints > amount)
+    if (this->HitPoints > static_cast<int>(amount))
     {
         this->HitPoints -= amount;
         std::cout << this->name << " take Damage :-" << amount << std::endl;        
@@ -76,10 +76,13 @@ void ClapTrap::beRepaired(unsigned int amount)
 
 ClapTrap::ClapTrap(const ClapTrap& obj)
 {
-    this->HitPoints = obj.HitPoints;
-    this->EnergyPoints = obj.EnergyPoints;
-    this->name = obj.name;
-    this->AttackDamage = obj.AttackDamage;
+    if (this != &obj)
+    {
+        this->HitPoints = obj.HitPoints;
+        this->EnergyPoints = obj.EnergyPoints;
+        this->name = obj.name;
+        this->AttackDamage = obj.AttackDamage;
+    }
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& obj)

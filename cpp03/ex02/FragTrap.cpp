@@ -6,7 +6,7 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 01:10:59 by ebelfkih          #+#    #+#             */
-/*   Updated: 2024/02/11 01:27:10 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2024/02/12 18:32:24 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ FragTrap::FragTrap()
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
     std::cout << "FragTrap constructor called" << std::endl;
-    this->name = name;
     this->HitPoints = 100;
     this->EnergyPoints = 50;
     this->AttackDamage = 20;
@@ -49,9 +48,12 @@ void FragTrap::attack(const std::string& target)
 
 FragTrap::FragTrap(const FragTrap& obj) : ClapTrap(obj.name)
 {
-    this->HitPoints = obj.HitPoints;
-    this->EnergyPoints = obj.EnergyPoints;
-    this->AttackDamage = obj.AttackDamage;
+    if (this != &obj)
+    {
+        this->HitPoints = obj.HitPoints;
+        this->EnergyPoints = obj.EnergyPoints;
+        this->AttackDamage = obj.AttackDamage;
+    }
 }
 
 FragTrap& FragTrap::operator=(const FragTrap& obj)

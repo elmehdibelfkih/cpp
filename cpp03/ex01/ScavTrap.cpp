@@ -6,7 +6,7 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 17:52:06 by ebelfkih          #+#    #+#             */
-/*   Updated: 2024/02/11 01:21:24 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2024/02/12 18:28:25 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,12 @@ void ScavTrap::guardGate()
 
 ScavTrap::ScavTrap(const ScavTrap& obj) : ClapTrap(obj.name)
 {
-    this->HitPoints = obj.HitPoints;
-    this->EnergyPoints = obj.EnergyPoints;
-    this->AttackDamage = obj.AttackDamage;
+    if (this != &obj)
+    {
+        this->HitPoints = obj.HitPoints;
+        this->EnergyPoints = obj.EnergyPoints;
+        this->AttackDamage = obj.AttackDamage;
+    }
 }
 
 ScavTrap& ScavTrap::operator=(const ScavTrap& obj)
