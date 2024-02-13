@@ -6,15 +6,15 @@
 #    By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/13 16:12:24 by ebelfkih          #+#    #+#              #
-#    Updated: 2024/02/13 16:13:12 by ebelfkih         ###   ########.fr        #
+#    Updated: 2024/02/13 20:30:46 by ebelfkih         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 NAME = AMateria
 GPP = c++ -std=c++98 -Wall -Wextra -Werror
-SRC = Dog.cpp Cat.cpp main.cpp AAnimal.cpp Brain.cpp
-HDRS = Dog.hpp Cat.hpp AAnimal.hpp Brain.hpp
+SRC = AMateria.cpp Cure.cpp main.cpp Ice.cpp ICharacter.cpp MateriaSource.cpp
+HDRS = AMateria.hpp Cure.hpp Ice.hpp ICharacter.hpp MateriaSource.hpp
 
 
 OBJ = $(SRC:%.cpp=%.o)

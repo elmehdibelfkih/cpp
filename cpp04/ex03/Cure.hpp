@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.hpp                                       :+:      :+:    :+:   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/13 16:13:29 by ebelfkih          #+#    #+#             */
-/*   Updated: 2024/02/13 18:27:57 by ebelfkih         ###   ########.fr       */
+/*   Created: 2024/02/13 18:47:31 by ebelfkih          #+#    #+#             */
+/*   Updated: 2024/02/13 19:10:02 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once 
 #include <iostream>
+#include "AMateria.hpp"
 
-class AMateria
+class Cure : public AMateria
 {
-    protected:
-        std::string type;
-    public:
-        AMateria();
-        AMateria(std::string const & type);
-        AMateria& operator=(const AMateria& obj);
-        ~AMateria();
-        
-        AMateria(AMateria &obj);
-        
-        std::string const & getType() const; //Returns the materia type
-        virtual AMateria* clone() const = 0;
-        virtual void use(ICharacter& target);
+private:
+    
+public:
+    Cure();
+    Cure(Cure& obj);
+    Cure&   operator=(const Cure& obj);
+    ~Cure();
+
+    AMateria* clone() const;
 };
