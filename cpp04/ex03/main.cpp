@@ -6,9 +6,16 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 18:48:42 by ebelfkih          #+#    #+#             */
-/*   Updated: 2024/02/13 18:49:55 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2024/02/14 08:23:45 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+
+#include "MateriaSource.hpp"
+#include "Ice.hpp"
+#include "Cure.hpp"
+#include "Character.hpp"
+
 
 int main()
 {

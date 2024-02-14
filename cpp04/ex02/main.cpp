@@ -6,7 +6,7 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 21:36:49 by ebelfkih          #+#    #+#             */
-/*   Updated: 2024/02/13 16:01:42 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2024/02/14 07:00:34 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int main()
 
     const AAnimal* j = new Dog();
     const AAnimal* i = new Cat();
-    
+    // const AAnimal  *animal = new AAnimal();
     delete j;//should not create a leak
     delete i;
 

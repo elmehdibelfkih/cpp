@@ -6,29 +6,28 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 16:13:19 by ebelfkih          #+#    #+#             */
-/*   Updated: 2024/02/13 19:04:40 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2024/02/14 08:10:14 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
 
-AMateria::AMateria()
+
+
+AMateria::AMateria() // default constructor
 {
-    std::cout << "AMateria : default constructor called "<<std::endl;
     this->type = "";
     
 }
 
-AMateria::AMateria(AMateria &obj)
+AMateria::AMateria(AMateria &obj) // copy constructor
 {
-    std::cout << "AMateria : copy constructor called "<<std::endl;
     if (this != &obj)
         *this = obj;
 }
 
-AMateria& AMateria::operator=(const AMateria& obj)
+AMateria& AMateria::operator=(const AMateria& obj) // coppy assignment operator 
 {
-    std::cout << "AMateria : copy assignement opertor called "<<std::endl;
     if (this != &obj)
     {
         this->type = obj.type;
@@ -36,18 +35,14 @@ AMateria& AMateria::operator=(const AMateria& obj)
     return *this;
 }
 
-AMateria::~AMateria()
+AMateria::~AMateria() // destructor
 {
-    std::cout << "AMateria : destructor called "<<std::endl;
-    
 }
 
 
-AMateria::AMateria(std::string const & type)
+AMateria::AMateria(std::string const & type) // constructor
 {
-    std::cout << "AMateria : constructor called "<<std::endl;
     this->type = type;
-    
 }
 
 
@@ -57,7 +52,10 @@ std::string const & AMateria::getType() const
 }
 
 
-// virtual void AMateria::use(ICharacter& target)
-// {
-    
-// }
+void AMateria::use(ICharacter& target)
+{
+    if (this->getType() == "ice")
+        std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
+    else if (this->getType() == "cure")
+        std::cout << "* heals  " << target.getName() << "\'s wounds *" << std::endl;
+}

@@ -6,7 +6,7 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 21:38:27 by ebelfkih          #+#    #+#             */
-/*   Updated: 2024/02/13 14:47:27 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2024/02/14 00:00:12 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,7 @@ Animal::Animal() // default constructor
 Animal::Animal(Animal& obj) // copy constructor
 {
     std::cout << "Animal : copy constructor called " << std::endl;
-    if (this != &obj)
-        this->type = obj.type;
+    this->type = obj.type;
 }
 
 Animal& Animal::operator=(const Animal& obj) // Copy assignment operator
@@ -34,7 +33,7 @@ Animal& Animal::operator=(const Animal& obj) // Copy assignment operator
 
 Animal::~Animal() // destructor
 {
-    std::cout << "Animal : default destructor called " << std::endl;
+    std::cout << "Animal : destructor called " << std::endl;
     
 }
 

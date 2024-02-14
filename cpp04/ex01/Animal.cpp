@@ -6,7 +6,7 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 21:38:27 by ebelfkih          #+#    #+#             */
-/*   Updated: 2024/02/13 14:52:01 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2024/02/14 00:00:03 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ Animal& Animal::operator=(const Animal& obj) // Copy assignment operator
 
 Animal::~Animal() // destructor
 {
-    std::cout << "Animal : default destructor called " << std::endl;
+    std::cout << "Animal : destructor called " << std::endl;
     
 }
 

@@ -1,30 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/13 20:30:22 by ebelfkih          #+#    #+#             */
-/*   Updated: 2024/02/14 06:10:27 by ebelfkih         ###   ########.fr       */
+/*   Created: 2024/02/14 01:04:44 by ebelfkih          #+#    #+#             */
+/*   Updated: 2024/02/14 08:11:48 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #pragma once
-#include "IMateriaSource.hpp"
+#include <iostream>
 #include "AMateria.hpp"
+#include "ICharacter.hpp"
 
 
-class MateriaSource : public IMateriaSource
+class Character : public ICharacter
 {
 private:
+    std::string name;
     AMateria *slot[4];
+    AMateria *tmp[4];
 public:
-    MateriaSource();
-    MateriaSource(const MateriaSource& obj);
-    MateriaSource& operator=(const MateriaSource& obj);
-    ~MateriaSource();
+    Character();
+    Character(Character& obj);
+    Character& operator=(const Character& obj);
+    virtual ~Character();
 
-    void learnMateria(AMateria*);
-    AMateria* createMateria(std::string const & type);
+    Character(std::string name);
+    std::string const & getName() const;
+    void equip(AMateria* m);
+    void unequip(int idx);
+    AMateria * getSlot(int index);
+    void use(int idx, ICharacter& target);
 };

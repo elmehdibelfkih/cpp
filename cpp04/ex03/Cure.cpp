@@ -6,39 +6,34 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 18:47:44 by ebelfkih          #+#    #+#             */
-/*   Updated: 2024/02/13 19:28:35 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2024/02/14 08:16:13 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cure.hpp"
 
-Cure::Cure() : AMateria("cure")
+Cure::Cure() : AMateria("cure") // default constructor
 {
-    std::cout << "Cure : default consructor called" << std::endl;
 }
 
-Cure::Cure(Cure& obj)
+Cure::Cure(Cure& obj) // copy constructor
 {
-    std::cout << "Cure : copy consructor called" << std::endl;
     if (this != &obj)
         *this = obj;
 }
 
-Cure&   Cure::operator=(const Cure& obj)
+Cure&   Cure::operator=(const Cure& obj) // copy assignment operator
 {
-    std::cout << "Cure : copy assignment operator called" << std::endl;
     if (this != &obj)
         this->type = obj.type;
     return *this;
 }
 
-Cure::~Cure()
+Cure::~Cure() // destructor
 {
-    std::cout << "Cure : destructor called" << std::endl;
-    
 }
 
-virtual AMateria* Cure::clone() const
+AMateria* Cure::clone() const
 {
     AMateria* ret = new Cure;
     

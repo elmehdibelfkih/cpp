@@ -6,7 +6,7 @@
 /*   By: ebelfkih <ebelfkih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 21:36:49 by ebelfkih          #+#    #+#             */
-/*   Updated: 2024/02/13 15:12:44 by ebelfkih         ###   ########.fr       */
+/*   Updated: 2024/02/14 06:56:24 by ebelfkih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,24 +15,24 @@
 
 int main()
 {
-    // Animal *animals[10];
+    Animal *animals[10];
     
-    // for (int i = 0; i < 10; i++)
-    // {
-    //     if (i % 2 == 0)
-    //     {
-    //         animals[i] = new Cat();
+    for (int i = 0; i < 10; i++)
+    {
+        if (i % 2 == 0)
+        {
+            animals[i] = new Cat();
             
-    //     }
-    //     else
-    //         animals[i] = new Dog();
-    // }
-    // for (int i = 0; i < 10; i++)
-    // {
-    //     animals[i]->makeSound();
-    // }
-    // for (int i = 0; i < 10; i++)
-    //     delete animals[i];
+        }
+        else
+            animals[i] = new Dog();
+    }
+    for (int i = 0; i < 10; i++)
+    {
+        animals[i]->makeSound();
+    }
+    for (int i = 0; i < 10; i++)
+        delete animals[i];
     
     
     // const Animal* meta = new Animal();
@@ -44,11 +44,13 @@ int main()
     // j->makeSound();
     // meta->makeSound();
 
-    const Animal* j = new Dog();
-    const Animal* i = new Cat();
+    // const Animal* j = new Dog();
+    // const Animal* i = new Cat();
     
-    delete j;//should not create a leak
-    delete i;
+    // delete j;//should not create a leak
+    // delete i;
+
+    
 
 return 0;
 }
